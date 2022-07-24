@@ -4,7 +4,7 @@ import HighchartsReact from 'highcharts-react-official';
 import dataSet  from './dataGenerator';
 const options = {
     chart: {
-      type: 'line'
+      type: 'scatter'
     },
     title: {
       text: 'My chart'
@@ -14,9 +14,9 @@ const options = {
     },
     series: dataSet
   };
-function LineChart(){
+function ScatterChart(){
   return(<div>
       <HighchartsReact highcharts={Highcharts} options={options} />
   </div>);
 }
-export default LineChart;
+export default ScatterChart;

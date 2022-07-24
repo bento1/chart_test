@@ -4,8 +4,8 @@ type Data = {
 }
 type DataSet= Data[]
 
-const seriesNum:Number=2;
-const dataNum:Number=50000;
+const seriesNum:Number=100;
+const dataNum:Number=20*180*800;
 let dataSet:DataSet=[];
 
 for (let i = 0; i < seriesNum; i++) {

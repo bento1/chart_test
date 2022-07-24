@@ -9,6 +9,9 @@ const options = {
     title: {
       text: 'My chart'
     },
+    boost: {
+        useGPUTranslations: true
+    },
     series: dataSet
   };
 function LineChart(){

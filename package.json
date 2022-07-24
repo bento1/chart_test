@@ -39,5 +39,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "highcharts": "^10.2.0",
+    "highcharts-react-official": "^3.1.0"
   }
 }

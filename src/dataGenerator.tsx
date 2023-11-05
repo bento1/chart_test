@@ -1,11 +1,11 @@
-type Point =[Number,Number]
+type Point =[number,number]
 type Data = {
     data:Point[]
 }
 type DataSet= Data[]
 
-const seriesNum:Number=100;
-const dataNum:Number=20*180*800;
+const seriesNum:number=10;
+const dataNum:number=20*180;
 let dataSet:DataSet=[];
 
 for (let i = 0; i < seriesNum; i++) {

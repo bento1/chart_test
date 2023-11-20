@@ -11,8 +11,8 @@ export default function SliderVertical(){
         <RangeSlider
         // eslint-disable-next-line jsx-a11y/aria-proptypes
         aria-label={['min', 'max']}
-        colorScheme='pink'
         orientation='vertical'
+        defaultValue={[0, 100]}
         onChangeStart={(val) => console.log(val)} onChangeEnd={(val) => console.log(val)} 
         >
             <RangeSliderTrack>

@@ -1,7 +1,7 @@
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import dataSet  from './dataGenerator';
-import SliderHorizon from './SliderHorizon';
+import SliderHorizon, { GetHorizonRange } from './SliderHorizon';
 import SliderVertical from './SliderVertical';
 import { useEffect, useRef, useState } from 'react';
 import { Box, Switch } from '@chakra-ui/react'
@@ -59,25 +59,23 @@ const options = {
     },
   
   };
-const lim={
-  slider:{horizon:{min:0,max:100},
-  vertical:{min:0,max:100}
-  }
-}
+
 
 function ScatterChart(){
   const [config,setConfig ]=useState(options);
   const [toggleBipolar,setToggleBipolar]=useState(false);
-  const childStateRef = useRef();
-  // const [[xmin,xmax],setXRange ]=useState([0,100]);
-  // const [[xmin,xmax],setXRange ]=useState([0,100]);
-  // const [[ymin,ymax],setYRange ]=useState([0,100]);
+  const childStateRef = useRef<GetHorizonRange>(null);
+  const [[xmin,xmax],setXRange ]=useState([0,100]);
+  const [[xcenter,ycenter],setCenter ]=useState([null,null]);
+  const [[ymin,ymax],setYRange ]=useState([0,100]);
   // xmin_in_dataset=dataSet
 
   const addLine = () => {
     config.series.push({name:'bipolar',type:"line",data:[[1,2],[300,10]]});
   };
-  
+  const getHorizonRange = () =>{
+    
+  }
   useEffect(() => {
     console.log(toggleBipolar)
     if(toggleBipolar){
@@ -89,10 +87,7 @@ function ScatterChart(){
     }
   }, [toggleBipolar]);
   
-  useEffect(() => {
-    console.log(lim)
-  }, [lim]);
-
+ 
   const styleSliderVertical:CSSProperties = {float :'left', width :'10%', height: "600px" };
   const styleSliderHorizon:CSSProperties = {float :'left', width :'70%', height: "600px" };
   const styleChart:CSSProperties = {float :'left', width:'60%' };
@@ -108,7 +103,7 @@ function ScatterChart(){
     <div>
       <div style={styleSliderVertical}></div>
       <div style={styleSliderHorizon}>
-        <SliderHorizon ref={childStateRef}/>
+        <SliderHorizon props={getHorizonRange} ref={childStateRef} />
       </div>
     </div>
     <div>

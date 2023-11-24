@@ -14,6 +14,9 @@ function App() {
         <div>
         <ScatterChart/>
         </div>
+        <div>
+        <LineChart/>
+        </div>
     </>
 
 

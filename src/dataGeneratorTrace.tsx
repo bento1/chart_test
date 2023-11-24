@@ -34,7 +34,7 @@ for (let i = 0; i < seriesNum; i++) {
     }
     dataSet.data.push({
         name:'demo',
-        type:'scatter',
+        type:'line',
         data:arr,
 
     });

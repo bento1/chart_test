@@ -19,7 +19,6 @@ const SliderHorizon = forwardRef<GetHorizonRange, any>((props:any,ref:any) => {
     };
     
     const changeRange = (input_Range:number[]) => {
-        console.log(input_Range)
         setRange(input_Range)
     };
     useImperativeHandle(ref, () => ({getHorizonRange}));
